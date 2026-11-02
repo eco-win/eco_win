@@ -1,28 +1,665 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --verde: #476849;
+    --verde-oscuro: #2e4b34;
+    --oliva: #a3b36a;
+    --terracota: #bd6047;
+    --naranja: #d99a48;
+    --crema: #fbf5e8;
+    --blanco: #fffdf7;
+    --texto: #25392b;
+    --gris: #353b34;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f7ef;
-    color: #254734;
-    text-align: center;
+    background: var(--blanco);
+    color: var(--texto);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 header {
-    background: #367653;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 14px 6%;
+    background: #366931;
+    border-bottom: 1px solid #366931;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--verde);
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo b {
+    color: var(--terracota);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(112, 78, 26)smoke;
+}
+
+nav a:hover {
+    color: var(--terracota);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    padding: 65px 8%;
+    background: var(--crema);
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.etiqueta {
+    color: var(--terracota);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+h1 {
+    color: var(--verde-oscuro);
+    font-size: clamp(38px, 5vw, 64px);
+    letter-spacing: -2px;
+    margin: 15px 0;
+}
+
+h1 span, h2 span {
+    color: var(--terracota);
+}
+
+.hero-text > p:not(.etiqueta) {
+    color: var(--gris);
+    max-width: 500px;
+}
+
+.hero-image {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 330px;
+}
+
+.hero-image img {
+    width: min(100%, 400px);
+    border-radius: 25px;
+    mix-blend-mode: multiply;
+}
+
+.burbuja {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    padding: 13px 18px;
+    border-radius: 15px;
+    background: white;
+    color: var(--verde);
+    box-shadow: 0 8px 25px #30472d18;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.boton {
+    display: inline-block;
+    margin: 10px 8px 0 0;
+    padding: 13px 20px;
+    border: 0;
+    border-radius: 30px;
+    background: var(--verde);
     color: white;
-    padding: 35px 20px;
-}
-
-main {
-    padding: 40px 20px;
-}
-
-button {
-    background: #e6a84a;
-    color: #243c2d;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
     cursor: pointer;
-    font-size: 16px;
+    transition: .2s;
+}
+
+.boton:hover {
+    background: var(--verde-oscuro);
+    transform: translateY(-2px);
+}
+
+.boton.secundario {
+    background: transparent;
+    color: var(--verde);
+    border: 1px solid #c7d0bc;
+}
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 30px 8%;
+    background: white;
+}
+
+.beneficios article {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    align-items: center;
+    column-gap: 12px;
+}
+
+.beneficios article > span {
+    grid-row: span 2;
+    font-size: 32px;
+}
+
+.beneficios h3 {
+    margin: 0;
+    font-size: 15px;
+    color: var(--verde);
+}
+
+.beneficios p {
+    margin: 3px 0 0;
+    font-size: 11px;
+    color: var(--gris);
+}
+
+.seccion {
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.seccion h2, .mapa-seccion h2, .racha h2 {
+    color: var(--verde-oscuro);
+    font-size: clamp(28px, 3.5vw, 42px);
+    margin: 8px 0 12px;
+}
+
+.descripcion {
+    margin: 0 auto 32px;
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 1100px;
+    margin: 30px auto 0;
+}
+
+.tarjeta {
+    padding: 25px 20px;
+    border: 1px solid #e9e4d7;
+    border-radius: 18px;
+    background: #f8f5e9;
+    text-align: left;
+}
+
+.tarjeta:nth-child(2) {
+    background: #f2f4e8;
+}
+
+.tarjeta:nth-child(3) {
+    background: #fbefe6;
+}
+
+.tarjeta:nth-child(4) {
+    background: #f6f0df;
+}
+
+.emoji {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.tarjeta h3 {
+    color: var(--verde);
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.tarjeta p {
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.tarjeta strong {
+    color: var(--terracota);
+    font-size: 12px;
+}
+
+.ranking {
+    background: #f8f5eb;
+}
+
+.tabla {
+    max-width: 900px;
+    margin: 30px auto 0;
+    padding: 12px 25px;
+    border-radius: 18px;
+    background: white;
+    text-align: left;
+    box-shadow: 0 8px 30px #344b3210;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: .8fr 2.5fr 1fr 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: 16px 8px;
+    border-bottom: 1px solid #eeeae0;
+    font-size: 13px;
+}
+
+.fila:last-child {
+    border-bottom: 0;
+}
+
+.encabezado {
+    color: #879080;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.puesto {
+    color: var(--naranja);
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.nombre-escuela {
+    color: var(--verde);
+    font-weight: 800;
+}
+
+.puntos {
+    color: var(--verde);
+    font-weight: 900;
+}
+
+.nota {
+    color: #92998d;
+    font-size: 10px;
+}
+
+.mapa-seccion {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+}
+
+.mapa-seccion > div:first-child > p:not(.etiqueta) {
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.leyenda {
+    margin-top: 20px;
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.mapa {
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+    border: 8px solid white;
+    border-radius: 22px;
+    background-color: #e8edda;
+    background-image:
+        linear-gradient(25deg, transparent 45%, #d7e0c4 45%, #d7e0c4 48%, transparent 48%),
+        linear-gradient(110deg, transparent 33%, #d7e0c4 33%, #d7e0c4 36%, transparent 36%);
+    box-shadow: 0 12px 35px #344b3215;
+}
+
+.calle {
+    position: absolute;
+    background: #fffaf0;
+    border: 1px solid #e7dcc7;
+    border-radius: 30px;
+}
+
+.calle1 {
+    width: 130%;
+    height: 25px;
+    top: 45%;
+    left: -12%;
+    transform: rotate(-24deg);
+}
+
+.calle2 {
+    width: 25px;
+    height: 140%;
+    top: -20%;
+    left: 57%;
+    transform: rotate(25deg);
+}
+
+.parque {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: #cbd9ae;
+    font-size: 27px;
+}
+
+.parque1 {
+    top: 8%;
+    left: 8%;
+}
+
+.parque2 {
+    bottom: 8%;
+    right: 8%;
+}
+
+.marcador {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    font-size: 19px;
+    box-shadow: 0 5px 12px #30472d25;
+}
+
+.escuela {
+    background: var(--terracota);
+}
+
+.reciclaje {
+    background: var(--verde);
+}
+
+.marcador1 { top: 25%; left: 35%; }
+.marcador2 { top: 55%; left: 67%; }
+.marcador3 { bottom: 14%; left: 28%; }
+.marcador4 { top: 15%; right: 12%; }
+
+.etiqueta-mapa {
+    position: absolute;
+    bottom: 5px;
+    left: 12px;
+    color: var(--verde);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.participacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    text-align: left;
+    align-items: start;
+    background: var(--crema);
+}
+
+.racha > p:not(.etiqueta) {
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.contador {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+    padding: 18px;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid #ece5d4;
+}
+
+.contador > span {
+    font-size: 35px;
+}
+
+.contador strong {
+    color: var(--verde);
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+.contador p {
+    margin: 0;
+    color: var(--gris);
+    font-size: 11px;
+}
+
+.formulario {
+    padding: 28px;
+    border: 1px solid #f0e9dc;
+    border-radius: 22px;
+    background: white;
+    box-shadow: 0 12px 35px #344b3210;
+}
+
+.formulario h3 {
+    margin-top: 0;
+    color: var(--verde);
+    font-size: 23px;
+}
+
+form label {
+    display: block;
+    margin: 15px 0 6px;
+    color: #53644f;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+form select, form textarea, form input[type="file"] {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #e3e6d9;
+    border-radius: 10px;
+    background: #fffefb;
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 12px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form .boton {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#mensaje {
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.premio {
+    text-align: center;
+}
+
+.final {
+    padding: 55px 8%;
+    text-align: center;
+    background: var(--verde);
+    color: white;
+}
+
+.final h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 10px;
+}
+
+.final p {
+    color: #e0e8db;
+    font-size: 14px;
+}
+
+.boton-claro {
+    background: var(--crema);
+    color: var(--verde);
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 25px 8%;
+    color: var(--gris);
+    font-size: 11px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer small {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .beneficios {
+        padding: 25px 5%;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        justify-content: center;
+        padding: 12px;
+    }
+
+    nav {
+        width: 100%;
+        font-size: 11px;
+    }
+
+    .hero, .mapa-seccion, .participacion {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 38px 22px;
+    }
+
+    .hero-image {
+        min-height: 280px;
+    }
+
+    .hero-image img {
+        max-width: 320px;
+    }
+
+    .beneficios {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .seccion {
+        padding: 55px 20px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .fila {
+        grid-template-columns: .7fr 2fr .8fr .8fr;
+        gap: 6px;
+        font-size: 10px;
+        padding: 13px 2px;
+    }
+
+    .tabla {
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    .encabezado {
+        font-size: 8px;
+    }
+
+    .mapa {
+        min-height: 280px;
+    }
+
+    .formulario {
+        padding: 20px;
+    }
 }

@@ -4,21 +4,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECO-WIN</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Eco-Win | Cada acción suma</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>¡Mi página web!</h1>
-        <p>Creada desde cualquier computadora.</p>
+        <a href="#inicio" class="logo">
+            <img src="logo-eco-win.png" alt="Logo de Eco-Win">
+            <span>Eco-<b>Win</b></span>
+        </a>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#acciones">Acciones</a>
+            <a href="#ranking">Ranking</a>
+            <a href="#mapa">Mapa verde</a>
+            <a href="#premios">Premios</a>
+        </nav>
     </header>
 
     <main>
-        <h2>Bienvenido</h2>
-        <p>Este es el comienzo de mi nuevo proyecto.</p>
-        <button id="boton">Hacé clic acá</button>
-        <p id="mensaje"></p>
+        <section class="hero" id="inicio">
+            <div class="hero-text">
+                <p class="etiqueta">♻️ COMPETENCIA AMBIENTAL INTERESCOLAR</p>
+                <h1>Pequeñas acciones,<br><span>un gran cambio.</span></h1>
+                <p>
+                    Convertí tus acciones sustentables en un desafío.
+                    Sumá puntos con tu escuela, cuidá el planeta
+                    y competí por increíbles premios.
+                </p>
+                <a class="boton" href="#acciones">¡Quiero participar! →</a>
+                <a class="boton secundario" href="#ranking">Ver ranking</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="logo-eco-win.png" alt="Osito de Eco-Win con un trofeo">
+                <div class="burbuja">🏆 ¡Tu escuela puede ganar!</div>
+            </div>
+        </section>
+
+        <section class="beneficios">
+            <article>
+                <span>🌱</span>
+                <h3>Cuidá el ambiente</h3>
+                <p>Transformá pequeños hábitos en grandes cambios.</p>
+            </article>
+            <article>
+                <span>🏫</span>
+                <h3>Representá a tu escuela</h3>
+                <p>Trabajá en equipo y subí puestos en el ranking.</p>
+            </article>
+            <article>
+                <span>🎁</span>
+                <h3>Ganate premios</h3>
+                <p>Ayudá a tu colegio a alcanzar nuevas metas.</p>
+            </article>
+        </section>
+
+        <section class="seccion" id="acciones">
+            <p class="etiqueta">CADA GESTO CUENTA</p>
+            <h2>¿Cómo podés <span>sumar puntos?</span></h2>
+            <p class="descripcion">Elegí una acción sustentable y empezá a sumar.</p>
+
+            <div class="tarjetas">
+                <article class="tarjeta">
+                    <div class="emoji">♻️</div>
+                    <h3>Reciclaje</h3>
+                    <p>Separá residuos y llevá materiales reciclables.</p>
+                    <strong>+10 puntos</strong>
+                </article>
+                <article class="tarjeta">
+                    <div class="emoji">🚲</div>
+                    <h3>Movilidad sustentable</h3>
+                    <p>Andá en bicicleta o caminá cuando sea posible y seguro.</p>
+                    <strong>+15 puntos</strong>
+                </article>
+                <article class="tarjeta">
+                    <div class="emoji">🧃</div>
+                    <h3>Reutilización</h3>
+                    <p>Dale una segunda oportunidad a los materiales.</p>
+                    <strong>+12 puntos</strong>
+                </article>
+                <article class="tarjeta">
+                    <div class="emoji">🌿</div>
+                    <h3>Actividades verdes</h3>
+                    <p>Participá en jornadas ambientales con tu escuela.</p>
+                    <strong>+20 puntos</strong>
+                </article>
+            </div>
+        </section>
+
+        <section class="seccion ranking" id="ranking">
+            <p class="etiqueta">COMPETENCIA SANA</p>
+            <h2>El ranking <span>verde</span> 🏆</h2>
+            <p class="descripcion">¿Qué escuela lidera el desafío este mes?</p>
+
+            <div class="tabla">
+                <div class="fila encabezado">
+                    <span>Posición</span>
+                    <span>Escuela</span>
+                    <span>Acciones</span>
+                    <span>Puntos</span>
+                </div>
+                <div id="ranking-lista"></div>
+            </div>
+            <p class="nota">Los nombres y puntajes son ficticios y sirven como demostración.</p>
+        </section>
+
+        <section class="seccion mapa-seccion" id="mapa">
+            <div>
+                <p class="etiqueta">EXPLORÁ TU CIUDAD</p>
+                <h2>Descubrí los <span>puntos verdes</span></h2>
+                <p>
+                    Encontrá escuelas participantes y lugares para llevar
+                    tus materiales reciclables. Este mapa es una ilustración
+                    de ejemplo; todavía no muestra ubicaciones reales.
+                </p>
+                <div class="leyenda">
+                    <p>🟠 Escuelas participantes</p>
+                    <p>🟢 Puntos de reciclaje</p>
+                </div>
+            </div>
+
+            <div class="mapa">
+                <div class="parque parque1">🌳</div>
+                <div class="parque parque2">🌿</div>
+                <div class="calle calle1"></div>
+                <div class="calle calle2"></div>
+                <div class="marcador escuela marcador1">🏫</div>
+                <div class="marcador reciclaje marcador2">♻️</div>
+                <div class="marcador escuela marcador3">🏫</div>
+                <div class="marcador reciclaje marcador4">♻️</div>
+                <p class="etiqueta-mapa">Mapa ilustrativo de Eco-Win</p>
+            </div>
+        </section>
+
+        <section class="seccion participacion">
+            <div class="racha">
+                <p class="etiqueta">TU CONSTANCIA SUMA</p>
+                <h2>¡Mantené tu <span>racha!</span> 🔥</h2>
+                <p>Ingresá y registrá tu participación cada día.</p>
+                <div class="contador">
+                    <span>🔥</span>
+                    <div>
+                        <strong id="racha">0 días</strong>
+                        <p>de participación en esta demostración</p>
+                    </div>
+                </div>
+                <button class="boton" id="ingreso">Marcar mi ingreso</button>
+                <p class="nota">La racha de esta versión es de prueba y no se guarda al cerrar la página.</p>
+            </div>
+
+            <div class="formulario">
+                <h3>🌼 Registrar una acción</h3>
+                <form id="form-accion">
+                    <label for="escuela">Tu escuela</label>
+                    <select id="escuela" required>
+                        <option value="">Elegí tu escuela</option>
+                        <option>Escuela Horizonte</option>
+                        <option>Secundaria Los Aromos</option>
+                        <option>Instituto Río Claro</option>
+                        <option>Escuela del Parque</option>
+                    </select>
+
+                    <label for="accion">¿Qué acción realizaste?</label>
+                    <select id="accion" required>
+                        <option value="">Elegí una acción</option>
+                        <option value="10">Reciclaje (+10 puntos)</option>
+                        <option value="15">Movilidad sustentable (+15 puntos)</option>
+                        <option value="12">Reutilización (+12 puntos)</option>
+                        <option value="20">Actividad ambiental (+20 puntos)</option>
+                    </select>
+
+                    <label for="descripcion">Contanos qué hiciste</label>
+                    <textarea id="descripcion" rows="3"
+                        placeholder="Ej.: separamos papel en el aula..."></textarea>
+
+                    <label for="foto">Foto de la acción (opcional)</label>
+                    <input id="foto" type="file" accept="image/*">
+
+                    <button class="boton" type="submit">Registrar acción →</button>
+                    <p id="mensaje"></p>
+                </form>
+            </div>
+        </section>
+
+        <section class="seccion" id="premios">
+            <p class="etiqueta">EL ESFUERZO SE CELEBRA</p>
+            <h2>Premios para <span>seguir creciendo</span></h2>
+            <p class="descripcion">Ideas de premios para las escuelas ganadoras.</p>
+
+            <div class="tarjetas">
+                <article class="tarjeta premio">
+                    <div class="emoji">🏀</div>
+                    <h3>Deportes</h3>
+                    <p>Materiales deportivos para compartir en equipo.</p>
+                </article>
+                <article class="tarjeta premio">
+                    <div class="emoji">🔊</div>
+                    <h3>Música y eventos</h3>
+                    <p>Equipamiento para encuentros escolares.</p>
+                </article>
+                <article class="tarjeta premio">
+                    <div class="emoji">🌳</div>
+                    <h3>Una escuela más verde</h3>
+                    <p>Plantas y materiales para una huerta escolar.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="final">
+            <h2>El cambio empieza con vos.</h2>
+            <p>Sumate al desafío y ayudá a tu escuela a dejar una huella positiva.</p>
+            <a class="boton boton-claro" href="#acciones">¡Vamos a participar! →</a>
+        </section>
     </main>
+
+    <footer>
+        <a href="#inicio" class="logo">🌿 Eco-<b>Win</b></a>
+        <p>Un proyecto juvenil para cuidar el ambiente.</p>
+        <small>Prototipo escolar · Datos de demostración</small>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script src="main.js"></script>
 </body>
