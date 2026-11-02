@@ -7,7 +7,7 @@
     --oliva: #a3b36a;
     --terracota: #bd6047;
     --naranja: #d99a48;
-    --crema: #fbf5e8;
+    --celeste: #e4f4f8;
     --blanco: #fffdf7;
     --texto: #25392b;
     --gris: #353b34;
@@ -24,8 +24,9 @@ html {
 
 body {
     margin: 0;
-    background: var(--blanco);
-    color: var(--texto);
+    /* background: var(--blanco);
+    color: var(--texto);*/
+    background-color: #e4f4f8;
     font-family: 'DM Sans', sans-serif;
     line-height: 1.6;
 }
@@ -46,8 +47,8 @@ header {
     align-items: center;
     gap: 25px;
     padding: 14px 6%;
-    background: #366931;
-    border-bottom: 1px solid #366931;
+    background: #a8d3a4;
+    border-bottom: 1px solid #a8d3a4;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -81,7 +82,7 @@ nav {
     gap: 20px;
     font-size: 13px;
     font-weight: 700;
-    color: rgb(112, 78, 26)smoke;
+    color: rgb(112, 78, 26) smoke;
 }
 
 nav a:hover {
@@ -94,7 +95,7 @@ nav a:hover {
     align-items: center;
     gap: 30px;
     padding: 65px 8%;
-    background: var(--crema);
+    background: var(--celeste);
 }
 
 .hero-text {
@@ -130,11 +131,10 @@ h1 span, h2 span {
     place-items: center;
     min-height: 330px;
 }
-
 .hero-image img {
     width: min(100%, 400px);
     border-radius: 25px;
-    mix-blend-mode: multiply;
+    mix-blend-mode: normal;
 }
 
 .burbuja {
@@ -180,7 +180,7 @@ h1 span, h2 span {
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     padding: 30px 8%;
-    background: white;
+    background: var(--celeste);
 }
 
 .beneficios article {
@@ -662,4 +662,18 @@ footer small {
     .formulario {
         padding: 20px;
     }
+    
+    /* Fondo celeste para toda la página (revisar posibles cambios)*/
+body {
+    background-color: var(--celeste);
+}
+
+.hero,
+.beneficios,
+.seccion,
+.ranking,
+.participacion,
+.premio {
+    background-color: var(--celeste);
+}
 }
