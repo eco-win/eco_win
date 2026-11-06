@@ -1,4 +1,4 @@
- /* ===== NUEVA PALETA DE COLORES EXTRAÍDA DE LA IMAGEN GLACIAR ===== */
+/* ===== NUEVA PALETA DE COLORES EXTRAÍDA DE LA IMAGEN GLACIAR ===== */
 :root {
     --azul-profundo: #214354;
     --azul-medio: #40809b;
@@ -80,6 +80,15 @@ header {
     transform: scale(1.08) rotate(-3deg);
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+.logo svg { width: 42px; height: 42px; }
+
 .logo-text {
     font-family: 'Nunito', sans-serif;
     font-size: 26px;
@@ -106,6 +115,8 @@ nav {
     display: flex;
     align-items: center;
     gap: 22px;
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
 nav a {
@@ -135,17 +146,17 @@ nav a:hover::after {
     width: 100%;
 }
 
-.streak-pill-header {
-    background: rgba(255, 255, 255, 0.12);
+.streak-pill-header, .racha-badge {
+    background: rgba(255, 255, 255, 0.15);
     padding: 6px 14px;
-    border-radius: 30px;
+    border-radius: 99px;
     display: flex;
     align-items: center;
     gap: 8px;
-    border: 1px solid rgba(198, 227, 235, 0.3);
+    border: 1px solid rgba(255, 209, 102, 0.4);
     font-size: 14px;
     font-weight: 800;
-    color: var(--acento-dorado);
+    color: #ffd166;
 }
 
 .menu-toggle {
@@ -223,11 +234,12 @@ nav a:hover::after {
     gap: 15px;
 }
 
-.btn {
+.btn, .boton {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    margin: 15px 10px 0 0;
     padding: 14px 28px;
     border-radius: 30px;
     font-size: 14px;
@@ -236,26 +248,25 @@ nav a:hover::after {
     transition: all 0.25s ease;
     border: none;
     box-shadow: 0 4px 12px rgba(33, 67, 84, 0.15);
-}
-
-.btn-primario {
     background: var(--azul-profundo);
     color: var(--blanco-puro);
 }
 
-.btn-primario:hover {
-    background: #173240;
+.boton:hover, .btn-primario:hover {
+    background: var(--azul-medio);
     transform: translateY(-3px);
     box-shadow: 0 8px 22px rgba(33, 67, 84, 0.3);
 }
 
-.btn-secundario {
-    background: var(--azul-medio);
-    color: var(--blanco-puro);
+.btn-secundario, .boton.secundario {
+    background: transparent;
+    color: var(--azul-oscuro, var(--azul-profundo));
+    border: 2px solid var(--azul-medio);
 }
 
 .btn-secundario:hover {
-    background: #336980;
+    background: var(--azul-medio);
+    color: var(--blanco-puro);
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(64, 128, 155, 0.35);
 }
@@ -308,7 +319,14 @@ nav a:hover::after {
 
 /* ===== SECCIONES GENERALES ===== */
 .seccion {
-    padding: 80px 8%;
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.seccion h2 {
+    font-size: 2.2rem;
+    color: var(--azul-profundo);
+    margin-bottom: 10px;
 }
 
 .seccion-header {
@@ -333,7 +351,7 @@ nav a:hover::after {
     font-size: 15px;
 }
 
-/* ===== PILARES / BENEFICIOS ===== */
+/* ===== PILARES / BENEFICIOS / TARJETAS ===== */
 .beneficios-bar {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -363,47 +381,40 @@ nav a:hover::after {
     flex-shrink: 0;
 }
 
-/* ===== TARJETAS DE ACCIONES SUSTENTABLES ===== */
-.grid-acciones {
+.tarjetas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
 }
 
-.tarjeta-accion {
+.tarjeta, .tarjeta-accion {
     background: var(--blanco-puro);
-    border: 2px solid var(--celeste-helado);
-    border-radius: var(--radio);
-    padding: 26px 20px;
+    border: 1px solid var(--azul-pastel, var(--celeste-helado));
+    border-radius: 18px;
+    padding: 24px;
+    text-align: left;
+    box-shadow: 0 6px 18px var(--sombra);
     transition: all 0.3s ease;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: var(--sombra);
 }
 
-.tarjeta-accion:hover {
+.tarjeta:hover, .tarjeta-accion:hover {
     transform: translateY(-6px);
     border-color: var(--azul-glaciar);
     box-shadow: var(--sombra-fuerte);
 }
 
-.tarjeta-accion .icono {
-    font-size: 42px;
-    margin-bottom: 14px;
-    background: var(--blanco-hielo);
-    width: 70px;
-    height: 70px;
-    display: grid;
-    place-items: center;
-    border-radius: 18px;
+.tarjeta .emoji, .tarjeta-accion .icono {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
 }
 
-.tarjeta-accion h3 {
+.tarjeta h3, .tarjeta-accion h3 {
     color: var(--azul-profundo);
-    font-size: 19px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .tarjeta-accion p {
@@ -422,64 +433,60 @@ nav a:hover::after {
     border-radius: 12px;
 }
 
-/* ===== MAPA INTERACTIVO COMPLETO ===== */
-.mapa-container-wrapper {
-    background: var(--blanco-puro);
-    border-radius: var(--radio);
-    box-shadow: var(--sombra-fuerte);
-    border: 2px solid var(--azul-glaciar);
-    overflow: hidden;
+/* ===== MAPA INTERACTIVO ===== */
+.map-container, .mapa-container-wrapper {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    min-height: 520px;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+    background: var(--blanco-puro);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px var(--sombra);
+    margin-top: 20px;
+    text-align: left;
+    overflow: hidden;
+    border: 2px solid var(--azul-glaciar);
 }
 
-.mapa-sidebar {
-    padding: 24px;
+#map, #mapa-leaflet {
+    width: 100%;
+    height: 420px;
+    border-radius: 14px;
+    z-index: 1;
+}
+
+.map-sidebar, .mapa-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     background: var(--blanco-hielo);
-    border-right: 2px solid var(--celeste-helado);
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    z-index: 2;
-}
-
-.filter-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    padding: 10px;
+    border-radius: 12px;
 }
 
 .filter-btn {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    padding: 12px 14px;
-    border-radius: 14px;
-    border: 2px solid var(--celeste-helado);
-    background: var(--blanco-puro);
-    color: var(--azul-profundo);
-    font-weight: 800;
-    font-size: 13px;
+    padding: 10px 14px;
+    border: 1.5px solid var(--azul-pastel, var(--celeste-helado));
+    border-radius: 10px;
+    background: var(--fondo-glacial, var(--blanco-puro));
+    font-weight: 700;
     cursor: pointer;
+    color: var(--texto-primario, var(--azul-profundo));
     transition: all 0.2s ease;
     text-align: left;
 }
 
 .filter-btn:hover {
     border-color: var(--azul-glaciar);
-    transform: translateX(3px);
 }
 
 .filter-btn.active {
-    background: var(--azul-profundo);
+    background: var(--azul-medio);
     color: var(--blanco-puro);
-    border-color: var(--azul-profundo);
-}
-
-.filter-btn.active .count-badge {
-    background: var(--azul-glaciar);
-    color: var(--azul-profundo);
+    border-color: var(--azul-medio);
 }
 
 .count-badge {
@@ -492,15 +499,7 @@ nav a:hover::after {
     font-weight: 900;
 }
 
-#mapa-leaflet {
-    width: 100%;
-    height: 100%;
-    min-height: 520px;
-    z-index: 1;
-    background-color: var(--celeste-helado);
-}
-
-/* Estilo para los Popups de Leaflet en la Paleta Glacial */
+/* Estilo para los Popups de Leaflet */
 .leaflet-popup-content-wrapper {
     background: var(--blanco-puro);
     border-radius: 16px;
@@ -511,43 +510,65 @@ nav a:hover::after {
 .leaflet-popup-tip {
     background: var(--azul-glaciar);
 }
-.custom-popup-tag {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 3px 10px;
-    border-radius: 8px;
-    font-size: 11px;
-    font-weight: 900;
+
+/* ===== RANKING / TABLA ===== */
+.tabla {
+    max-width: 800px;
+    margin: 25px auto 0;
+    background: var(--blanco-puro);
+    border-radius: 16px;
+    padding: 15px 25px;
+    box-shadow: 0 6px 20px var(--sombra);
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 0.6fr 2fr 1fr 1fr;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--azul-pastel, var(--celeste-helado));
+    text-align: left;
+}
+
+.fila:last-child {
+    border-bottom: none;
+}
+
+.encabezado {
+    font-weight: 800;
+    color: var(--azul-medio);
+    font-size: 0.85rem;
     text-transform: uppercase;
 }
-.tag-escuela { background: var(--blanco-hielo); color: var(--azul-profundo); }
-.tag-reciclaje { background: var(--celeste-helado); color: var(--azul-profundo); }
-.tag-bici { background: var(--azul-glaciar); color: var(--azul-profundo); }
 
-.mapa-add-form {
+.puesto {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--azul-medio);
+}
+
+/* ===== FORMULARIO & RACHA ===== */
+.participacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: left;
     background: var(--blanco-puro);
-    padding: 18px;
-    border-radius: 16px;
-    border: 2px solid var(--celeste-helado);
-    box-shadow: var(--sombra);
+    padding: 40px;
+    border-radius: 24px;
+    margin-top: 40px;
 }
 
-.mapa-add-form h4 {
-    font-size: 14px;
-    color: var(--azul-profundo);
-    margin-bottom: 6px;
-}
-
-.form-control {
+.formulario input, .formulario select, .formulario textarea, .form-control {
     width: 100%;
-    padding: 12px 14px;
-    border-radius: 12px;
-    border: 1.5px solid var(--azul-glaciar);
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    border: 1.5px solid var(--azul-pastel, var(--azul-glaciar));
+    border-radius: 8px;
+    font-family: inherit;
     background: var(--blanco-puro);
     color: var(--texto-oscuro);
-    font-size: 14px;
     outline: none;
-    transition: border-color 0.2s ease;
 }
 
 .form-control:focus {
@@ -588,12 +609,14 @@ nav a:hover::after {
     transform: translateY(0);
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
     background: var(--azul-profundo);
     color: var(--celeste-helado);
-    padding: 40px 8% 25px;
     text-align: center;
+    padding: 40px 8% 25px;
+    margin-top: 40px;
+    font-size: 0.9rem;
     border-top: 4px solid var(--azul-glaciar);
 }
 
@@ -603,7 +626,7 @@ footer p {
     margin-top: 8px;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 960px) {
     .hero {
         grid-template-columns: 1fr;
@@ -619,16 +642,16 @@ footer p {
         justify-content: center;
     }
 
-    .mapa-container-wrapper {
+    .map-container, .mapa-container-wrapper {
         grid-template-columns: 1fr;
     }
 
-    .mapa-sidebar {
+    .map-sidebar, .mapa-sidebar {
         border-right: none;
         border-bottom: 2px solid var(--celeste-helado);
     }
 
-    .grid-participacion {
+    .participacion {
         grid-template-columns: 1fr;
     }
 }
@@ -653,10 +676,8 @@ footer p {
     .menu-toggle {
         display: block;
     }
+}
 
-    .ranking-header-row, .ranking-row {
-        grid-template-columns: 50px 1.5fr 1fr 1fr;
-        padding: 14px 12px;
-        font-size: 13px;
-    }
+@media (max-width: 800px) {
+    #map, #mapa-leaflet { height: 320px; }
 }
