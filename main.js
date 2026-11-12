@@ -81,9 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollWheelZoom: true
         }).setView([-34.6037, -58.3816], 13);
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        L.tileLayer('https://tile.openstreetmap.de/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         let layerGroup = L.layerGroup().addTo(map);
